@@ -1,0 +1,133 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+:root {
+  --primary-color: #f90a39;
+  --text-color: #1d1d1d;
+  --bg-color: linear-gradient(135deg, #000000, #f700ff); /* Degradê azul e vermelho */
+  --neon-color: #ffffff; /* Cor neon */
+  --neon-glow: 0 0 5px #fffeff, 0 0 10px #ffffff, 0 0 15px #ffffff; /* Neon mais suave */
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: var(--bg-color);
+}
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-color);
+}
+.calendar {
+  width: 100%;
+  max-width: 600px;
+  padding: 30px 20px;
+  border-radius: 10px;
+  background-color: #1c1b29; /* Fundo da calendar mais escuro */
+  box-shadow: var(--neon-glow);
+}
+.calendar .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #01010176;
+}
+.calendar .header .month {
+  display: flex;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  color: #ffffff;
+  text-shadow: 0 0 5px #9f26d7; /* Neon mais suave */
+}
+.calendar .header .btns {
+  display: flex;
+  gap: 10px;
+}
+.calendar .header .btns .btn {
+  width: 50px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #ff00ffbb;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s;
+  box-shadow: 0 0 5px #ff00ff;
+}
+.calendar .header .btns .btn:hover {
+  background-color: #ffffffa5;
+  transform: scale(1.05);
+}
+.weekdays {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.weekdays .day {
+  width: calc(100% / 7 - 10px);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  text-shadow: 0 0 5px #ffffff;
+}
+.days {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.days .day {
+  width: calc(100% / 7 - 10px);
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  background-color: #000000bb;
+  transition: all 0.3s;
+  box-shadow: 0 0 5px #9900ff;
+}
+.days .day:not(.next):not(.prev):hover {
+  color: #ff00ff;
+  background-color: #e5e4f5;
+  transform: scale(1.05);
+  box-shadow: 0 0 5px #ff00ff;
+}
+.days .day.today {
+  color: #fff;
+  background-color: #ff00ff;
+  box-shadow: 0 0 5px #ff00ff;
+}
+.days .day.next,
+.days .day.prev {
+  color: #555;
+}
+
+/* Credits */
+.credits a {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 14px;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+}
+.credits span {
+  color: #ffffff;
+  text-shadow: 0 0 5px #fff4ff;
+}
